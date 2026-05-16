@@ -5,7 +5,7 @@
 ## 安裝步驟
 
 1. 確保你有 Python 環境。
-2. 安裝必要的套件：`pip install PyMuPDF openai pandas openpyxl`
+2. 安裝必要的套件：`pip install streamlit pymupdf pillow numpy easyocr`
 3. 設定 OpenAI API 金鑰：
    - 設定環境變數 `OPENAI_API_KEY`，或直接在程式碼中修改。
 
