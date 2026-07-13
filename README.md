@@ -1,23 +1,43 @@
-# PDF AI 分析工具
+# PaddleOCR VL PDF/PNG 解析範例
 
-這個程式可以讀取 PDF 檔案，並使用 OpenAI 的 GPT 模型來分析內容。
+## 需求
+- Python 3.8+
+- `paddleocr`
+- `pdf2image`
+- `pillow`
+- `numpy`
+- `opencv-python`
 
-## 安裝步驟
+## 安裝
 
-1. 確保你有 Python 環境。
-2. 安裝必要的套件：`pip install streamlit pymupdf pillow numpy easyocr`
-3. 設定 OpenAI API 金鑰：
-   - 設定環境變數 `OPENAI_API_KEY`，或直接在程式碼中修改。
+```powershell
+python -m pip install -r requirements.txt
+```
 
-## 使用方法
+### Windows 注意
+`pdf2image` 需要安裝 Poppler。
+1. 下載 Poppler for Windows
+2. 解壓後把 `bin` 目錄加入系統 PATH
 
-1. 將你的 PDF 檔案放在同一個資料夾中。
-2. 修改程式中的 `pdf_path` 變數為你的 PDF 檔案名稱。
-3. 執行程式：`python 開PDF圖.py`
-4. 程式會產生一個 `analysis_result.xlsx` 檔案，包含原始 PDF 內容和 AI 分析結果。
+## 使用方式
 
-## 注意事項
+```powershell
+python paddleocr_vl_pdf_png.py input.pdf
+python paddleocr_vl_pdf_png.py input.png
+```
 
-- 確保 PDF 檔案存在。
-- OpenAI API 需要金鑰，請從 OpenAI 官網取得。
-- 程式會限制文字長度以避免 API 限制。
+結果會輸出到同一個目錄下，檔名為 `input.ocr.txt`。
+
+## 本地網頁介面
+
+```powershell
+python app.py
+```
+
+或者直接使用整合後的腳本：
+
+```powershell
+python paddleocr_vl_pdf_png.py --serve
+```
+
+開啟瀏覽器並前往 `http://127.0.0.1:5000`，即可上傳 PDF 或圖片檔案並直接在網頁上檢視 OCR 解析結果。

@@ -1,0 +1,8 @@
+paddleocr>=2.9.0
+pdf2image
+pillow
+numpy
+opencv-python
+torch
+transformers
+accelerate
